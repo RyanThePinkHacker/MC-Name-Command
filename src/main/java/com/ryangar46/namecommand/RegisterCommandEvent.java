@@ -18,6 +18,6 @@ public class RegisterCommandEvent
   @SubscribeEvent
   public static void onRegisterCommandEvent(RegisterCommandsEvent event) {
     CommandDispatcher<CommandSource> commandDispatcher = event.getDispatcher();
-    NameCommand.register((commandDispatcher));
+    ItemCommand.register((commandDispatcher));
   }
 }
