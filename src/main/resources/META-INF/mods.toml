@@ -15,7 +15,7 @@ license="All rights reserved"
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
 # The modid of the mod
-modId="namecommand" #mandatory
+modId="itemcommand" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 # ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
 # see the associated build.gradle script for how to populate this completely automatically during a build
@@ -37,25 +37,36 @@ description='''
 Addes a command that can changed the name of the item being held.
 
 Syntax:
-/name target name
+/item
+	enchant
+		(target)
+			(enchantment)
+				(level)
+	give
+		(target)
+			(item)
+				(count)
+	name
+		(target)
+			(name)
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.namecommand]] #optional
-    # the modid of the dependency
-    modId="forge" #mandatory
-    # Does this dependency have to exist - if not, ordering below must be specified
-    mandatory=true #mandatory
-    # The version range of the dependency
-    versionRange="[36,)" #mandatory
-    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
-    ordering="NONE"
-    # Side this dependency is applied on - BOTH, CLIENT or SERVER
-    side="BOTH"
+[[dependencies.itemcommand]] #optional
+	# the modid of the dependency
+	modId="forge" #mandatory
+	# Does this dependency have to exist - if not, ordering below must be specified
+	mandatory=true #mandatory
+	# The version range of the dependency
+	versionRange="[36,)" #mandatory
+	# An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+	ordering="NONE"
+	# Side this dependency is applied on - BOTH, CLIENT or SERVER
+	side="BOTH"
 # Here's another dependency
-[[dependencies.namecommand]]
-    modId="minecraft"
-    mandatory=true
+[[dependencies.itemcommand]]
+	modId="minecraft"
+	mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="[1.16.5,1.17)"
-    ordering="NONE"
-    side="BOTH"
+	versionRange="[1.16.5,1.17)"
+	ordering="NONE"
+	side="BOTH"

@@ -1,4 +1,4 @@
-package com.ryangar46.namecommand;
+package com.ryangar46.itemcommand;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -12,7 +12,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(Main.MOD_ID)
 public class Main
 {
-    public static final String MOD_ID = "namecommand";
+    public static final String MOD_ID = "itemcommand";
 
     public Main() {
         // Register the setup method for modloading

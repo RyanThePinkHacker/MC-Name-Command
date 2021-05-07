@@ -1,4 +1,4 @@
-package com.ryangar46.namecommand;
+package com.ryangar46.itemcommand;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
