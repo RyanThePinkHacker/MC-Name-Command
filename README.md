@@ -4,5 +4,16 @@ A mod for Minecraft that adds a name command.
 ## Syntax:
 
 ```
-/name target name
+/item
+	enchant
+		(target)
+			(enchantment)
+				(level)
+	give
+		(target)
+			(item)
+				(count)
+	name
+		(target)
+			(name)
 ```
