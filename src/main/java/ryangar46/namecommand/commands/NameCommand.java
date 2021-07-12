@@ -1,7 +1,6 @@
 package ryangar46.namecommand.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
-import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.command.argument.MessageArgumentType;
 import net.minecraft.entity.Entity;
@@ -15,20 +14,15 @@ import java.util.Collection;
 
 public class NameCommand {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-        LiteralArgumentBuilder<ServerCommandSource> nameCommand
-                = CommandManager.literal("name")
+        dispatcher.register(CommandManager.literal("name")
                 .requires((commandSource) -> commandSource.hasPermissionLevel(2))
                 .then(CommandManager.argument("targets", EntityArgumentType.entities())
                         .then(CommandManager.argument("name", MessageArgumentType.message())
                                 .executes((p_198493_0_) -> {
-                                    return nameItem(p_198493_0_.getSource(), EntityArgumentType.getEntities(p_198493_0_, "targets"), MessageArgumentType.getMessage(p_198493_0_, "name").getString());
-                                })
-                        )
-                );
-        dispatcher.register(nameCommand);
+                                    return nameItem(EntityArgumentType.getEntities(p_198493_0_, "targets"), MessageArgumentType.getMessage(p_198493_0_, "name").getString()); }))));
     }
 
-    private static int nameItem(ServerCommandSource source, Collection<? extends Entity> target, String name) {
+    private static int nameItem(Collection<? extends Entity> target, String name) {
         int i = 0;
 
         for(Entity entity : target) {

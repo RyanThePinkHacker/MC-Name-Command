@@ -8,7 +8,7 @@ public class Main implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
-				NameCommand.register(dispatcher);
+			NameCommand.register(dispatcher);
 		});
 	}
 }
