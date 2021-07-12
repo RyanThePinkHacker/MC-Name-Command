@@ -1,4 +1,4 @@
-package ryangar46.namecommand.commands;
+package com.ryangar46.namecommand.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.command.argument.EntityArgumentType;
