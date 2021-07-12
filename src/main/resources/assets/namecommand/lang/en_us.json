@@ -1,0 +1,4 @@
+{
+    "command.name.success": "Successfully named item.",
+    "command.name.fail": "Failed to name item."
+}

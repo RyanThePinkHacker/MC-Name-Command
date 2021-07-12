@@ -14,7 +14,7 @@
   },
 
   "license": "All Rights Reserved",
-  "icon": "assets/icon.png",
+  "icon": "assets/namecommand/textures/icon.png",
 
   "environment": "*",
   "entrypoints": {
