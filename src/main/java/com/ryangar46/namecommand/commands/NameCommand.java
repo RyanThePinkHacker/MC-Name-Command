@@ -37,12 +37,14 @@ public class NameCommand {
                 if (!itemstack.isEmpty()) {
                     i++;
                     itemstack.setCustomName(Text.of(name));
-                    source.sendFeedback(new TranslatableText("command.name.success"), true);
                 }
             }
         }
 
-        if (i == 0) {
+        if (i > 0) {
+            source.sendFeedback(new TranslatableText("command.name.success", i, name), true);
+        }
+        else {
             throw new SimpleCommandExceptionType(new TranslatableText("command.name.fail")).create();
         }
 
